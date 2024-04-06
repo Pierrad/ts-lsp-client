@@ -1,6 +1,6 @@
 {
-  "name": "ts-lsp-client",
-  "version": "1.0.1",
+  "name": "@pierrad/ts-lsp-client",
+  "version": "1.0.2",
   "description": "Standalone Language Server Protocol Implementation with minimal dependencies",
   "main": "build/src/main.js",
   "types": "build/src/main.d.ts",
@@ -39,10 +39,10 @@
     "test": "vitest run --coverage",
     "test:watch": "vitest"
   },
-  "author": "Raffaele Fioratto <raffaele.fioratto@gmail.com>",
+  "author": "Raffaele Fioratto <raffaele.fioratto@gmail.com>, Pierre-Adrien Vasseur",
   "license": "MIT",
-  "repository": "ImperiumMaximus/ts-lsp-client",
-  "bugs": "https://github.com/ImperiumMaximus/ts-lsp-client/issues",
+  "repository": "Pierrad/ts-lsp-client",
+  "bugs": "https://github.com/Pierrad/ts-lsp-client/issues",
   "dependencies": {
     "json-rpc-2.0": "^1.7.0",
     "pino": "^7.0.5",

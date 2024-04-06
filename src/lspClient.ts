@@ -48,6 +48,10 @@ export class LspClient {
         this.endpoint.notify('textDocument/didOpen', params);
     }
 
+    public didChange(params: DidOpenTextDocumentParams): void {
+        this.endpoint.notify('textDocument/didChange', params);
+    }
+
     public didClose(params: DidCloseTextDocumentParams): void {
         this.endpoint.notify('textDocument/didClose', params);
     }
@@ -82,5 +86,10 @@ export class LspClient {
 
     public gotoDeclaration(params: DeclarationParams): PromiseLike<Location | Location[] | LocationLink[] |null> {
       return this.endpoint.send('textDocument/declaration', params);
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    public customRequest(method: string, params: any): PromiseLike<any> {
+        return this.endpoint.send(method, params);
     }
 }
