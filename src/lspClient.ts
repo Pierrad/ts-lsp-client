@@ -3,6 +3,7 @@ import {
   DefinitionParams,
   DidCloseTextDocumentParams,
   DidOpenTextDocumentParams,
+  DidChangeTextDocumentParams,
   DocumentSymbol,
   DocumentSymbolParams,
   InitializeParams,
@@ -48,7 +49,7 @@ export class LspClient {
         this.endpoint.notify('textDocument/didOpen', params);
     }
 
-    public didChange(params: DidOpenTextDocumentParams): void {
+    public didChange(params: DidChangeTextDocumentParams): void {
         this.endpoint.notify('textDocument/didChange', params);
     }
 
