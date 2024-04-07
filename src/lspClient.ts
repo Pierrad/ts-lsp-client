@@ -18,7 +18,10 @@ import {
   TypeDefinitionParams,
   Location,
   HoverParams,
-  Hover, DeclarationParams
+  Hover,
+  DeclarationParams,
+  GetCompletionsParams,
+  CompletionList
 } from "./models";
 import { once } from 'events';
 export class LspClient {
@@ -87,6 +90,10 @@ export class LspClient {
 
     public gotoDeclaration(params: DeclarationParams): PromiseLike<Location | Location[] | LocationLink[] |null> {
       return this.endpoint.send('textDocument/declaration', params);
+    }
+
+    public getCompletions(params: GetCompletionsParams): PromiseLike<CompletionList> {
+        return this.endpoint.send('getCompletions', params);
     }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

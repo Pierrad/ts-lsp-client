@@ -3142,4 +3142,25 @@ export interface DeclarationParams extends TextDocumentPositionParams,
   WorkDoneProgressParams, PartialResultParams {
 }
 
+export interface GetCompletionsParams {
+    doc: {
+        tabSize: number,
+        indentSize: number,
+        insertSpaces: boolean,
+        uri: string,
+        relativePath: string,
+        position: Position,
+        version: number
+    }
+}
 
+export interface CompletionItem {
+    text: string,
+    position: Position,
+    uuid: string,
+    range: Range,
+    displayText: string
+}
+export interface CompletionList {
+    completions: CompletionItem[]
+}
